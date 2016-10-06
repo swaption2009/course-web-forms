@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!--
+Make a useful calendar appear by using the appropriate input type.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz - Calendar</title>
+    <style>
+        body {
+            line-height: 1.5em;
+        }
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3>Pick a date and time</h3>
+    <label for="day">Day
+        <input id="day" type="text" placeholder="DD" maxlength="2">
+    </label>
+    <label for="month">Month
+        <input id="month" type="text" placeholder="MM" maxlength="2">
+    </label>
+    <label for="year">Year
+        <input id="year" type="text" placeholder="YYYY" maxlength="2">
+    </label>
+    <label id="time">Time
+        <input id="time" type="text" placeholder="HH:MM" maxlength="5">
+    </label>
+</body>
+</html>

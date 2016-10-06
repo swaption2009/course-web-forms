@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz - Simple Touch</title>
+  <meta name="msapplication-tap-highlight" content="no">
+  <style>
+    .main {
+      max-width: 40em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify;
+    }
+
+    button {
+      display: block;
+      margin: 20px 0px;
+      box-sizing: border-box;
+
+      padding-top: 0;
+      color: white;
+      font-size: 1.1em;
+      width: 100%;
+      height: 48px;
+
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* https://developers.google.com/web/fundamentals/design-and-ui/input/touch/active-states?hl=en */
+    .touchable {
+      background-color: BlueViolet;
+      
+      /* Webkit / Chrome Specific CSS to remove tap 
+      highlight color */
+      -webkit-tap-highlight-color: transparent;
+      
+      /* Firefox Specific CSS to remove button 
+      differences and focus ring */
+      background-image: none;
+    }
+
+    .touchable:hover {
+      background-color: HotPink;
+    }
+
+    .touchable:focus {
+      background-color: FireBrick;
+      
+      /* The outline parameter surpresses the border 
+      color / outline when focused */
+      outline: 0;
+    }
+
+    .touchable:active {
+      background-color: Aqua;
+    }
+
+    .touchable::-moz-focus-inner {
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+      <h3>Responsive Touch UI</h3>
+      <span align="justify">
+        Lorem ipsum dolor sit amet, vestibulum ligula nunc. Molestie mollis quisque mattis adipiscing est sed. Lectus facilisi suscipit venenatis, consequat congue varius justo sed ut netus, faucibus dui. Id vestibulum risus vestibulum eget. Sodales posuere vel, auctor dictum, vestibulum wisi.
+        <button class="touchable" tabindex="1">Button 1</button>
+        <button class="touchable" tabindex="2">Button 2</button>
+        <button class="touchable" tabindex="3">Button 3</button>
+        Pharetra metus id, ut nunc lobortis est eget, sit in magna ea mollis convallis, volutpat mus arcu montes in ac, adipiscing integer ipsum. Et volutpat ipsum wisi erat, amet massa suscipit, eget ornare sed aptent dolor ut turpis. Hymenaeos quam eros sit. Hendrerit dignissim nullam, in augue vestibulum nec proin, ullamcorper non vivamus. Morbi est et magna sociosqu sit.
+      </span>
+  </div>
+  <script>
+    /*
+    No need to edit this script :)
+     */
+
+    /*
+    Let's tell the users it will only work on mobile
+     */
+    var isMobile = {
+      Android: function() {
+        return navigator.userAgent.match(/Android/i);
+      },
+      BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+      },
+      iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      },
+      Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+      },
+      Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+      },
+      any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+      }
+    };
+
+    window.onload = function() {
+      if ( !isMobile.any()) {
+        document.querySelector(".main").innerHTML = "<h4>For this demo to work you will need to run it from a mobile device or open Chrome DevTools.</h4>";
+      }
+      if (/iP(hone|ad)/.test(window.navigator.userAgent)) {
+        document.body.addEventListener('touchstart', function() {}, false);
+      }
+    }
+  </script>
+</body>
+</html>

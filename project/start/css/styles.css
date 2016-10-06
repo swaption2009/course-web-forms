@@ -1,0 +1,102 @@
+body {
+  line-height: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.heading {
+  font-style: italic;
+  color: #aaa;
+}
+
+.card {
+  border: 1px solid;
+}
+
+.card-details {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.card-detail {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+h2.title-display {
+  text-align: center;
+}
+
+.card-detail:last-of-type {
+  margin-bottom: 1em;
+}
+
+.card-detail-category {
+  width: 20%;
+}
+
+.card-detail-actual {
+  width: 80%;
+  text-align: justify;
+}
+
+.card-detail-actual:not(.placeholder) {
+  color: dodgerblue;
+}
+
+.placeholder {
+  color: grey;
+}
+
+.inputs {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.input {
+  padding-left: 1em;
+}
+
+.input:nth-child(odd) {
+  background: #eee;
+}
+
+.split {
+  display: flex;
+}
+
+.input-type:after {
+  content: ":";
+}
+
+.input.split .input-type {
+  width: 30%;
+}
+
+@media screen and (min-width: 650px) {
+  .input {
+    /*max-width: 500px;*/
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-detail {
+    display: block;
+  }
+}
+
+.error-message {
+  color: red;
+}
